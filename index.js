@@ -11,7 +11,7 @@ const nextButton = document.querySelector('[data-js="button-next"]');
 const pagination = document.querySelector('[data-js="pagination"]');
 
 // States
-let maxPage = 41;
+let maxPage = 42;
 let page = 1;
 let searchQuery = "";
 
@@ -25,6 +25,7 @@ async function fetchCharacters() {
     const newCharacterCard = createCharacterCard(character);
     cardContainer.append(newCharacterCard);
   });
+  pagination.textContent=`${page} / ${maxPage}`;
 }
 fetchCharacters();
 
